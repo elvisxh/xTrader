@@ -5,12 +5,7 @@
 #include "xTrader.h"
 #include "GenMfDlg.h"
 
-//extern CRITICAL_SECTION cs;
 extern HANDLE g_hEvent;
-//extern vector<CThostFtdcInstrumentFieldEx*> InsinfVec;
-//extern vector<CThostFtdcInstrumentMarginRateField*> MargRateVec;
-//extern vector<CThostFtdcInstrumentCommissionRateField*> FeeRateList;
-//extern CThostFtdcInstrumentCommissionRateField FeeRateRev;
 // GenMfDlg ¶Ô»°¿ò
 
 IMPLEMENT_DYNAMIC(GenMfDlg, CDialog)

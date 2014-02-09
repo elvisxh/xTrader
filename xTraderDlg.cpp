@@ -21,9 +21,7 @@ extern CWnd* g_pCWnd;
 extern HANDLE g_hEvent;
 extern BOOL bMdSignal;
 extern UINT WM_XLISTCTRL_EDIT_END;
-
-
-extern LARGE_INTEGER g_lFreq;
+//extern LARGE_INTEGER g_lFreq;
 extern BOOL bRecconnect;
 
 CString g_szInstOld=_T("IF1402");

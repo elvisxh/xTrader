@@ -2,7 +2,7 @@
 <root>
 	<NtpServer>cn.pool.ntp.org</NtpServer>
 	<InstList>IF1402</InstList>
-	<WndInfo xPos="189" yPos="274" width="642" height="359" />
+	<WndInfo xPos="158" yPos="275" width="642" height="359" />
 	<SaveInfo>1</SaveInfo>
 	<BrokerGroup>183</BrokerGroup>
 	<ServerGroup>0</ServerGroup>

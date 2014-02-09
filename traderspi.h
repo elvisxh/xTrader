@@ -211,6 +211,7 @@ public:
 
 	// 是否收到成功的响应
 	bool IsErrorRspInfo(CThostFtdcRspInfoField *pRspInfo);
+	void ShowCbErrs(TThostFtdcErrorMsgType ErrorMsg);
 
 	void ClrAllVecs();
 public:

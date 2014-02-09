@@ -16,13 +16,8 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 extern HANDLE g_hEvent;
-//extern vector<CThostFtdcSettlementInfoField*> SiMsgList;
-//extern CThostFtdcRspInfoField g_RspMsg;
-//extern int g_iCountMsg;
-//BOOL g_bOnce = TRUE;
 static UINT LoginThread(LPVOID pParam);
 
-//BOOL bIsInit = FALSE;
 /////////////////////////////////////////////////////////////////////////////
 // LoginDlg dialog
 

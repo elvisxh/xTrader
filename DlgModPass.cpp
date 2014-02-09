@@ -112,10 +112,6 @@ void DlgModPass::OnOK()
 
 	char szOriPass[MAX_PATH],szNewPass[MAX_PATH];
 
-	//CDialog::OnOK();
-	//m_szNewPass=_T("");
-	//m_szOldPass=_T("");
-	//m_szNewCfm=_T("");
 	if (m_szNewPass.IsEmpty()||m_szOldPass.IsEmpty()||m_szNewCfm.IsEmpty())
 	{
 		ShowErroTips(IDS_STREMPTY,IDS_STRTIPS);
@@ -138,14 +134,10 @@ void DlgModPass::OnOK()
 		if (dwRet==WAIT_OBJECT_0)
 		{
 			strcpy(pApp->m_sPASSWORD,szNewPass);
-			ShowErroTips(IDS_MODPASSOK,IDS_STRTIPS);
+			//ShowErroTips(IDS_MODPASSOK,IDS_STRTIPS);
 			ResetEvent(g_hEvent);
 		}
-		else
-		{
-			ShowErroTips(IDS_USERPASSERR,IDS_STRTIPS);
-			return ;
-		}
+
 	}
 	if (m_itype==1)
 	{
@@ -154,14 +146,10 @@ void DlgModPass::OnOK()
 		DWORD dwRet = WaitForSingleObject(g_hEvent,WAIT_MS);
 		if (dwRet==WAIT_OBJECT_0)
 		{
-			ShowErroTips(IDS_MODPASSOK,IDS_STRTIPS);
+			//ShowErroTips(IDS_MODPASSOK,IDS_STRTIPS);
 			ResetEvent(g_hEvent);
 		}
-		else
-		{
-			ShowErroTips(IDS_ACCPASSERR,IDS_STRTIPS);
-			return ;
-		}
+
 	}
 
 }

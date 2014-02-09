@@ -841,19 +841,25 @@ void CtpTraderSpi::OnRspUserPasswordUpdate(CThostFtdcUserPasswordUpdateField *pU
 {
 	if( !IsErrorRspInfo(pRspInfo) && pUserPasswordUpdate )
 	{
-		//memcpy(&g_szUserPass,pUserPasswordUpdate->NewPassword,sizeof(CThostFtdcUserPasswordUpdateField));
-		//AfxMessageBox(tName);
+		ShowErroTips(IDS_MODPASSOK,IDS_STRTIPS);
 	}
-  if(bIsLast) SetEvent(g_hEvent);
+	else
+	{
+		ShowCbErrs(pRspInfo->ErrorMsg);
+	}
+	if(bIsLast) SetEvent(g_hEvent);
 }
-	
+
 ///资金账户口令更新请求响应
 void CtpTraderSpi::OnRspTradingAccountPasswordUpdate(CThostFtdcTradingAccountPasswordUpdateField *pTradingAccountPasswordUpdate, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
 {
 	if( !IsErrorRspInfo(pRspInfo) && pTradingAccountPasswordUpdate )
 	{
-		//memcpy(&g_szAccPass,pTradingAccountPasswordUpdate->NewPassword,sizeof(CThostFtdcTradingAccountPasswordUpdateField));
-		//AfxMessageBox(tName);
+		ShowErroTips(IDS_MODPASSOK,IDS_STRTIPS);
+	}
+	else
+	{
+		ShowCbErrs(pRspInfo->ErrorMsg);
 	}
   if(bIsLast) SetEvent(g_hEvent);
 }
@@ -1297,6 +1303,14 @@ bool CtpTraderSpi::IsErrorRspInfo(CThostFtdcRspInfoField *pRspInfo)
 	// 如果ErrorID != 0, 说明收到了错误的响应
 	bool ret = ((pRspInfo) && (pRspInfo->ErrorID != 0));
 	return ret;
+}
+
+void CtpTraderSpi::ShowCbErrs(TThostFtdcErrorMsgType ErrorMsg)
+{
+	TCHAR szMsg[MAX_PATH];
+	ansi2uni(CP_ACP,ErrorMsg,szMsg);
+	
+	ShowErroTips(szMsg,MY_TIPS);
 }
 
 void CtpTraderSpi::ClrAllVecs()
